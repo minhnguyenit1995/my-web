@@ -35,11 +35,11 @@ blog_index.getInitialProps = async function(context){
     slug = slug.substring(1 , slug.length)
   }
   const [blogs_featured , blogs_viewest ,blogs_promotion , blogs_productest , blogs] = await Promise.all([
-    fetch('http://localhost/mywebsite/api/get_api.php?key=post_featured').then(r => r.json()),
-    fetch('http://localhost/mywebsite/api/get_api.php?key=post_viewest').then(r => r.json()),
-    fetch('http://localhost/mywebsite/api/get_api.php?key=post_promotion').then(r => r.json()),
-    fetch('http://localhost/mywebsite/api/get_api.php?key=post_productest').then(r => r.json()),
-    fetch(`http://localhost/mywebsite/api/get_api.php?key=post_list&page=${page}&limit=10&slug=${slug}`).then(r => r.json())
+    fetch('https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_featured').then(r => r.json()),
+    fetch('https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_viewest').then(r => r.json()),
+    fetch('https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_promotion').then(r => r.json()),
+    fetch('https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_productest').then(r => r.json()),
+    fetch(`https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_list&page=${page}&limit=10&slug=${slug}`).then(r => r.json())
   ])
   return {blogs_featured , blogs_viewest , blogs_promotion , blogs_productest , blogs }
 }

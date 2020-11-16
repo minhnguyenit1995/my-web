@@ -4,7 +4,7 @@ import Link from "next/link"
 const BlogSingle_Suggestion = ({slug}) => {
   const [posts ,setPosts] = useState([])
   useEffect(() => {
-    axios.get("http://localhost/mytheme/api/get_api.php?key=post_suggestion&slug="+slug)
+    axios.get(`https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_suggestion&slug=`+slug)
       .then(res => setPosts(res.data))
   } , [slug])
   if(!posts || posts.length == 0) return  null

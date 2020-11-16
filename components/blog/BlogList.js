@@ -20,7 +20,7 @@ const [{blogs , total , page , limit , isLoadingMore} , setState] =
 
   useEffect(() => {
     if(isLoadingMore){
-      axios.get(`http://localhost/mywebsite/api/get_api.php?key=post_list&page=${page}&limit=10&slug=`)
+      axios.get(`https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_list&page=${page}&limit=10&slug=`)
       .then(res => {
         setState(prevState => ({
           ...prevState ,

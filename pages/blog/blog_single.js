@@ -19,8 +19,8 @@ const blog_single = ({post}) => {
           <Meta author={post.author} time={post.post_date} view={0} comment={0}/>
           {post.full_sizes && <ImageMain image={post.full_sizes['large']} />}
           <Article content={post.post_content} />
-          <BlogSingle_Suggestion slug={post.post_name} />
-          <BlogSingle_Relative slug={post.post_name} category={"thu-thuat"} />
+          {/*<BlogSingle_Suggestion slug={post.post_name} />*/}
+          {/*<BlogSingle_Relative slug={post.post_name} category={"thu-thuat"} />*/}
         </div>
         {/*<CommentWapper post_id={post.ID} />*/}
       </div>
@@ -82,7 +82,7 @@ const Meta = ({author , time ,  comment , view}) => {
 blog_single.getInitialProps = async  function(context){
   const slug = context.query.slug
   const [post] = await Promise.all([
-    fetch(`http://localhost/mywebsite/api/get_api.php?key=post_single&slug=${slug}`).then(r => r.json())
+    fetch(`https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_single&slug=${slug}`).then(r => r.json())
   ])
   return {post}
 }

@@ -4,7 +4,7 @@ import Link from "next/link"
 const BlogSingle_Relative = ({slug , category}) => {
   const [posts ,setPosts] = useState([])
   useEffect(() => {
-    axios.get("http://localhost/mytheme/api/get_api.php?key=post_list&slug="+category+"&page=1&limit=6")
+    axios.get(`https://adminwebsuper.000webhostapp.com/api/get_api.php?key=post_list&slug="+category+"&page=1&limit=6`)
       .then(res => {
         setPosts(res.data.collection)
       })
