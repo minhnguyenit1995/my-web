@@ -1,6 +1,6 @@
 import React , {useEffect , useState} from 'react'
 import axios from 'axios'
-import Link from "next/Link"
+import Link from "next/link"
 const BlogSingle_Relative = ({slug , category}) => {
   const [posts ,setPosts] = useState([])
   useEffect(() => {
