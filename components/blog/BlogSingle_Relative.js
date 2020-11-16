@@ -1,4 +1,4 @@
-import React , {useEffect , useState} from 'react'
+import  {useEffect , useState} from 'react'
 import axios from 'axios'
 import Link from "next/link"
 const BlogSingle_Relative = ({slug , category}) => {
@@ -16,9 +16,7 @@ const BlogSingle_Relative = ({slug , category}) => {
       <div className="__blog_relative_cotnainer">
         <RTitle title={"Tin tức liên quan"}/>
         <div className="__blog_relative_list">
-          {
-            posts.map((item , key) => item.post_name != slug &&  <RItem key={key} item={item}/>)
-          }
+          { posts.map((item , key) => item.post_name != slug &&  <RItem key={key} item={item}/>)}
         </div>
       </div>
     </div>
@@ -35,23 +33,28 @@ const RItem = ({item}) => {
   return (
     <div className="__blog_relative_item">
       <div className="__img">
-        <Link to={"/blog/" + item.post_name}>
-          <img src={item.full_sizes['300x200']} />
+        <Link href={"/blog/" + item.post_name}>
+          <a>
+            {/*<img src={item.full_sizes['300x200']} />*/}
+            <h1>oke</h1>
+          </a>
         </Link>
       </div>
       <div className="__meta">
-        <Link to={"/blog/" + item.post_name}>
-          <h3 className="__meta_name">
-            {item.post_title}
-          </h3>
-          <div className="__meta_list">
-            <div className="__meta_user">
-              <div className="__meta_date">
-                <span className="__meta_date_icon"></span>
-                <span>{item.post_date}</span>
+        <Link href={"/blog/" + item.post_name}>
+          <a href="">
+            <h3 className="__meta_name">
+              {item.post_title}
+            </h3>
+            <div className="__meta_list">
+              <div className="__meta_user">
+                <div className="__meta_date">
+                  <span className="__meta_date_icon"></span>
+                  <span>{item.post_date}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </Link>
       </div>
     </div>

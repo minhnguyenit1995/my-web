@@ -18,8 +18,8 @@ const Title = ({title}) => {
 
 const PItem = ({item}) => {
   return (
-    <Link href={"/tin-tuc/"+item.post_name} className="blog__promotion" >
-      <a>
+    <Link href={"/tin-tuc/"+item.post_name} >
+      <a  className="blog__promotion">
         <div className="img">
           <img src={item.full_sizes['shop_catalog']} alt={item.post_title}/>
         </div>

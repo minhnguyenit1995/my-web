@@ -6,3 +6,5 @@ const page_index = () => {
   )
 }
 
+
+export  default  page_index

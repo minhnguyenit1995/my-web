@@ -1,4 +1,4 @@
-import React , {useEffect , useState} from 'react'
+import  {useEffect , useState} from 'react'
 import axios from 'axios'
 import Link from "next/link"
 const BlogSingle_Suggestion = ({slug}) => {
@@ -17,8 +17,10 @@ const BlogSingle_Suggestion = ({slug}) => {
 
 const SItem  = ({item}) => {
   return (
-    <Link to={"/blog/" + item.post_name}>
-      <p>{item.post_title}</p>
+    <Link href={"/blog/" + item.post_name}>
+      <a>
+        <p>{item.post_title}</p>
+      </a>
     </Link>
   )
 }
